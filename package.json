@@ -1,25 +1,48 @@
 {
-  "name": "ruby-const-loader",
-  "version": "1.0.0",
-  "description": "Webpack loader to load Ruby constant into JS",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "author": "Jyoti Prakash Pradhan (er.jppradhan@gmail.com)",
-  "license": "ISC",
+  "description": "Webpack loader to load Ruby constant into JS",
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
     "babel-jest": "^27.0.5",
     "babel-loader": "^8.2.2",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
     "jest": "^27.0.5",
     "loader-utils": "^2.0.0",
     "memfs": "^3.2.2",
+    "prettier": "^2.3.1",
     "webpack": "^5.40.0",
     "webpack-cli": "^4.7.2"
   },
+  "engines": {
+    "node": ">= 12.13.0"
+  },
+  "files": [
+    "dist"
+  ],
   "jest": {
     "testEnvironment": "node"
-  }
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "ruby",
+    "constant",
+    "into js"
+  ],
+  "license": "MIT",
+  "main": "dist/cjs.js",
+  "name": "ruby-const-loader",
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "build": "NODE_ENV=production babel src -d dist --copy-files",
+    "prebuild": "npm run clean",
+    "prepare": "npm run build",
+    "security": "npm audit --production"
+  },
+  "version": "1.0.0"
 }
