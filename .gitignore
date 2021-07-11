@@ -1,0 +1,16 @@
+node_modules/
+logs
+*.log
+npm-debug.log*
+/coverage
+/dist
+/local
+/reports
+/node_modules
+.DS_Store
+Thumbs.db
+.idea
+*.iml
+.vscode
+*.sublime-project
+*.sublime-workspace
