@@ -1,5 +1,3 @@
-import { getOptions } from "loader-utils";
-
 class Source {
   constructor(content) {
     this.content = content;
