@@ -43,5 +43,5 @@
     "prepare": "npm run build",
     "security": "npm audit --production"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
