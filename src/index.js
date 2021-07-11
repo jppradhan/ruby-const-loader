@@ -4,7 +4,7 @@ class Source {
   }
 
   sanitize() {
-    this.content = this.content.replace(/.freeze/g, "");
+    this.content = this.content.replace(/(.freeze)/g, "");
     return this;
   }
 
@@ -22,7 +22,11 @@ const foundCurlyBracket = (str) => {
 };
 
 const foundStraightConst = (str) => {
-  return str.match(/[A-Z_]+\s=\s[\w\d\']+/g);
+  return str.match(/[A-Z_]+\s=\s[\w\d\'"\-_]+/g);
+};
+
+const foundComments = (str) => {
+  return str.match(/#[\s\d\w]*/g);
 };
 
 const readRubyConstants = (source) => {
@@ -34,6 +38,10 @@ const readRubyConstants = (source) => {
 
   for (let i = 0; i < sourceArr.length; i++) {
     const sourceStr = sourceArr[i].trim();
+    if (foundComments(sourceStr)) {
+      continue;
+    }
+
     if (!matched && foundStraightConst(sourceStr)) {
       constantsGroups.push(sourceStr);
     } else if (

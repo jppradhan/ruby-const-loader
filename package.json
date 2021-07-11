@@ -36,12 +36,12 @@
   "main": "dist/cjs.js",
   "name": "ruby-const-loader",
   "scripts": {
-    "test": "jest",
-    "clean": "rm -rf dist",
     "build": "NODE_ENV=production babel src -d dist --copy-files",
+    "clean": "rm -rf dist",
     "prebuild": "npm run clean",
     "prepare": "npm run build",
-    "security": "npm audit --production"
+    "security": "npm audit --production",
+    "test": "jest"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

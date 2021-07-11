@@ -7,6 +7,7 @@ class App
   ]
 
   APP_STORE = {
+    # sales
     IOS => 'iTunes',
     ROKU => 'Roku',
     ANDROID => 'Google Play',
@@ -19,8 +20,10 @@ class App
     amazon: 'amazon',
   }.freeze
 
-  APPLE = 'apple'.freeze
+  # comment
+  APPLE = "apple".freeze
   ANDROID = 'android'.freeze
+  ANDROID_TV = 'android-tv'.freeze
 
   serialize :metadata, HstoreSerializer
 
